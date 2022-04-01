@@ -1,0 +1,10 @@
+.categorias {
+    height: 30rem;
+}
+
+.categoria-tittle{
+    margin: 1rem 3rem 5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+}
