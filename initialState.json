@@ -1,0 +1,64 @@
+{
+    "initialState":{
+        "myList":[],
+        "mas_vistos":[
+            {
+                "id":2,
+                "tittle":"In the dark",
+                "year":2019,
+                "counterRating":"16+",
+                "duration":164,
+                "cover":"https://images.pexels.com/photos/4944956/pexels-photo-4944956.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+
+            },
+            {
+                "id":3,
+                "tittle":"In the Morning",
+                "year":2010,
+                "counterRating":"18+",
+                "duration":140,
+                "cover":"https://images.pexels.com/photos/4944956/pexels-photo-4944956.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+
+            },
+            {
+                "id":4,
+                "tittle":"Beautiful",
+                "year":2015,
+                "counterRating":"12+",
+                "duration":134,
+                "cover":"https://images.pexels.com/photos/4944956/pexels-photo-4944956.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+
+            }
+        ],
+        "variados":[
+                {
+                    "id":5,
+                    "tittle":"Play",
+                    "year":2022,
+                    "counterRating":"18+",
+                    "duration":180,
+                    "cover":"https://images.pexels.com/photos/4944956/pexels-photo-4944956.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+    
+                },
+                {
+                    "id":6,
+                    "tittle":"See",
+                    "year":2019,
+                    "counterRating":"18+",
+                    "duration":144,
+                    "cover":"https://images.pexels.com/photos/4944956/pexels-photo-4944956.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+    
+                },
+                {
+                    "id":7,
+                    "tittle":"Future",
+                    "year":2020,
+                    "counterRating":"16+",
+                    "duration":160,
+                    "cover":"https://images.pexels.com/photos/4944956/pexels-photo-4944956.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+    
+                }
+        ]
+
+    }
+}

@@ -31,7 +31,7 @@ function App () {
                         <CarouselItem />
                     </Carousel>
                 </Categorias>
-                <Categorias tittle="Favoritos">
+                <Categorias tittle="Variados">
                     <Carousel>
                         <CarouselItem />
                         <CarouselItem />
