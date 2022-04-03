@@ -1,6 +1,15 @@
 {
     "initalState":{
-        "myList":[],
+        "myList":[
+            {
+                "id":8,
+                "tittle":"Platzi",
+                "year":2022,
+                "counterRating":"12+",
+                "duration":16400,
+                "cover":"https://images.pexels.com/photos/4944956/pexels-photo-4944956.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+            }
+        ],
         "mas_vistos":[
             {
                 "id":2,

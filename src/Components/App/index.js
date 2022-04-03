@@ -24,7 +24,12 @@ const App = () => {
                     initialState.myList.length > 0  &&
                         <Categorias tittle="Mi lista">
                             <Carousel>
-                                <CarouselItem />
+                                {initialState.myList.map(item => (
+                                    
+                                    <CarouselItem key={item.id} {...item}/>
+                                ))
+
+                                }
                             </Carousel>
                         </Categorias>
                 }

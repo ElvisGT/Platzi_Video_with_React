@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './carouselItem.css';
 
 function CarouselItem ({tittle,year,counterRating,duration,cover}) {
@@ -19,6 +20,14 @@ function CarouselItem ({tittle,year,counterRating,duration,cover}) {
             </div>
         </React.Fragment>
     )
+}
+
+CarouselItem.propTypes = {
+    cover:PropTypes.string,
+    tittle:PropTypes.string,
+    year:PropTypes.number,
+    counterRating:PropTypes.string,
+    duration:PropTypes.number
 }
 
 export {CarouselItem};
