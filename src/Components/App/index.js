@@ -21,7 +21,8 @@ const App = () => {
 
                 
                 {initialState.length !== 0 &&
-                    initialState.myList.length > 0  &&
+                    initialState.myList &&
+                        initialState.length > 0  &&
                         <Categorias tittle="Mi lista">
                             <Carousel>
                                 {initialState.myList.map(item => (
