@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Platzi_Video_with_React/static/css/main.40cef7e2.css",
-    "main.js": "/Platzi_Video_with_React/static/js/main.4cd99cc0.js",
+    "main.js": "/Platzi_Video_with_React/static/js/main.cfa6bcfe.js",
     "index.html": "/Platzi_Video_with_React/index.html",
     "main.40cef7e2.css.map": "/Platzi_Video_with_React/static/css/main.40cef7e2.css.map",
-    "main.4cd99cc0.js.map": "/Platzi_Video_with_React/static/js/main.4cd99cc0.js.map"
+    "main.cfa6bcfe.js.map": "/Platzi_Video_with_React/static/js/main.cfa6bcfe.js.map"
   },
   "entrypoints": [
     "static/css/main.40cef7e2.css",
-    "static/js/main.4cd99cc0.js"
+    "static/js/main.cfa6bcfe.js"
   ]
 }
