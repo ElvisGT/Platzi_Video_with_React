@@ -5,44 +5,56 @@ import {Search} from '../Search/index';
 import {Categorias} from '../Categorias/index';
 import {Carousel} from '../Carousel/index';
 import {CarouselItem} from '../CarouselItem/index';
+import {useInitialState} from '../../hooks/useInitialState';
 
 import './app.css';
 
+const API = 'http://localhost:3000/initalState';
+
 const App = () => {
-    const [videos,setVideos] = useState([]);
-
-    useEffect(() => {
-            fetch('http://localhost:3000/initalState')
-            .then(response => response.json())
-            .then(data => setVideos(data))
-
-    },[]);
-
-    console.log(videos);
-
-    return (
+    const initialState = useInitialState(API);
+    
+    return initialState.length === 0 ? <h1>Cargando...</h1> :(
         <div className="app">
                 <Header />
                 <Search />
-                <Categorias tittle="Mi lista">
-                    <Carousel>
-                        <CarouselItem />
-                    </Carousel>
-                </Categorias>
+
+                
+                {initialState.length !== 0 &&
+                    initialState.myList.length > 0  &&
+                        <Categorias tittle="Mi lista">
+                            <Carousel>
+                                <CarouselItem />
+                            </Carousel>
+                        </Categorias>
+                }
+                
+               
                 <Categorias tittle="Mas vistos">
                     <Carousel>
-                        <CarouselItem />
+                        {initialState.length !== 0 &&
+                            initialState.mas_vistos.map(item => (
+                                <CarouselItem key={item.id} {...item} />
+                            ))
+                        }
                     </Carousel>
-                </Categorias>
+                </Categorias> 
+                
                 <Categorias tittle="Variados">
                     <Carousel>
-                        <CarouselItem />
+                        {initialState.length !== 0 &&
+                            initialState.variados.map(item => (
+                                <CarouselItem key={item.id} {...item} />
+                            ))
+                        }
                     </Carousel>
                 </Categorias>
                 
                 <Footer />
         </div>
     )
+
+    
 }
 
 
