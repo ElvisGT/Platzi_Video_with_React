@@ -9,7 +9,7 @@ import {useInitialState} from '../../hooks/useInitialState';
 
 import './app.css';
 
-const API = 'http://localhost:3000/initalState';
+const API = 'https://elvisgt.github.io/datos/initalState.json';
 
 const App = () => {
     const initialState = useInitialState(API);

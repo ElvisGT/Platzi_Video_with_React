@@ -7,16 +7,24 @@ const useInitialState = (API) => {
 
     // const FetchData = async () => {
     //     try{
-    //         const response = await fetch('http://localhost:3000/initalState');
+    //         const response = await fetch(API,{
+    //           method:"GET",
+    //           mode:"no-cors",
+    //           credentials:"include"
+    //         });
     //         const data = await response.json();
     //         setVideos(data);
     //     }catch(error){
-    //         console.log(error(error))
+    //         throw new Error(error)
     //     }
     // }
 
     useEffect(() => {
-           fetch(API)
+           fetch(API,{
+             mode:"no-cors",
+             method:"GET",
+             credentials:"include"
+           })
               .then(response => response.json())
               .then(data => setVideos(data))
         
