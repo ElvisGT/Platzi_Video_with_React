@@ -21,7 +21,8 @@ const App = () => {
 
                 
                 {initialState.length !== 0 &&
-                    initialState.myList.length > 0  &&
+                    initialState.myList &&
+                        initialState.myList.length > 0  &&
                         <Categorias tittle="Mi lista">
                             <Carousel>
                                 {initialState.myList.map(item => (
@@ -38,7 +39,8 @@ const App = () => {
                 <Categorias tittle="Mas vistos">
                     <Carousel>
                         {initialState.length !== 0 &&
-                            initialState.mas_vistos.map(item => (
+                            initialState.mas_vistos &&
+                                initialState.mas_vistos.map(item => (
                                 <CarouselItem key={item.id} {...item} />
                             ))
                         }
@@ -48,7 +50,8 @@ const App = () => {
                 <Categorias tittle="Variados">
                     <Carousel>
                         {initialState.length !== 0 &&
-                            initialState.variados.map(item => (
+                            initialState.variados &&
+                                initialState.variados.map(item => (
                                 <CarouselItem key={item.id} {...item} />
                             ))
                         }
