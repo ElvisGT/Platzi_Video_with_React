@@ -31,26 +31,24 @@ const App = () => {
 
                                 <CarouselItem key={item.id} {...item} />
                             ))
-}
+
                         
-                        
-                    
+                      
+                    }
                     </Carousel>
                 </Categorias> 
                 
-                {/* <Categorias tittle="Variados">
+                <Categorias tittle="Variados">
                     <Carousel>
-                    {initialStateTitles.map(item => (
-                                    initialStatePhotos.map(item2 => (
+                    {
+                        initialState.slice(0,4).map(item => (
 
-                                        <CarouselItem key={item.id} {...item2}/>
-                                    ))
-                                    
-                                ))
+                            <CarouselItem key={item.id} {...item} />
+                        ))
 
-                                }
+                    }
                     </Carousel>
-                </Categorias> */}
+                </Categorias>
                 
                 <Footer />
         </div>

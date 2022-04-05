@@ -16,7 +16,7 @@
 }
 
 
-@media screen and (max-width:320px){
+@media screen and (max-width:768px){
     .carousel__container {
         display: flex;
         overflow-x: scroll;
