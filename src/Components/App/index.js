@@ -9,51 +9,48 @@ import {useInitialState} from '../../hooks/useInitialState';
 
 import './app.css';
 
-const API = 'http://localhost:3000/initalState';
+const API_titles = 'https://jsonplaceholder.typicode.com/todos?_start=0&_limit=5';
+const API_photos = 'https://jsonplaceholder.typicode.com/photos?_start=0&_limit=5';
 
 const App = () => {
-    const initialState = useInitialState(API);
+    const initialState = useInitialState(API_titles,API_photos);
+
     
     return initialState.length === 0 ? <h1>Cargando...</h1> :(
         <div className="app">
                 <Header />
                 <Search />
-
                 
-                {initialState.length !== 0 &&
-                    initialState.myList.length > 0  &&
-                        <Categorias tittle="Mi lista">
-                            <Carousel>
-                                {initialState.myList.map(item => (
-                                    
-                                    <CarouselItem key={item.id} {...item}/>
-                                ))
-
-                                }
-                            </Carousel>
-                        </Categorias>
-                }
+                
                 
                
                 <Categorias tittle="Mas vistos">
                     <Carousel>
-                        {initialState.length !== 0 &&
-                            initialState.mas_vistos.map(item => (
+                    {
+                        initialState.slice(0,4).map(item => (
+
                                 <CarouselItem key={item.id} {...item} />
                             ))
-                        }
+}
+                        
+                        
+                    
                     </Carousel>
                 </Categorias> 
                 
-                <Categorias tittle="Variados">
+                {/* <Categorias tittle="Variados">
                     <Carousel>
-                        {initialState.length !== 0 &&
-                            initialState.variados.map(item => (
-                                <CarouselItem key={item.id} {...item} />
-                            ))
-                        }
+                    {initialStateTitles.map(item => (
+                                    initialStatePhotos.map(item2 => (
+
+                                        <CarouselItem key={item.id} {...item2}/>
+                                    ))
+                                    
+                                ))
+
+                                }
                     </Carousel>
-                </Categorias>
+                </Categorias> */}
                 
                 <Footer />
         </div>
