@@ -4,6 +4,14 @@
     min-height: calc(80vh - 7rem - 10rem);
     
 }
+.carousel__container{
+    display: flex;
+    align-items: flex-start;
+    overflow-x: scroll;
+    min-height: 30rem;
+    overscroll-behavior-x: contain;
+    scroll-snap-type:x proximity;
+}
 
 .carousel__container:hover .carousel-item{
     opacity: 0.3;
@@ -11,16 +19,13 @@
     
 }
 .carousel__container:hover .carousel-item:hover{
-    transform: scale(1.5);
+    transform: scale(1.1);
     opacity: 1;
 }
 
 
-@media screen and (max-width:768px){
+@media screen and (min-width:768px){
     .carousel__container {
-        display: flex;
-        overflow-x: scroll;
-        overscroll-behavior-x: contain;
-        scroll-snap-type:x proximity;
+        overflow: hidden;
     }
 }

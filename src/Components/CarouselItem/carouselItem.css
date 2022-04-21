@@ -10,7 +10,7 @@
     border-radius: 2rem;
 }
 .carousel-item:hover ~ .carousel-item{
-    transform: translate3d(10rem ,0 ,0);
+    transform: translate3d(3rem ,0 ,0);
     
 }
 
