@@ -6,9 +6,9 @@
 }
 .carousel__container{
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     overflow-x: scroll;
-    min-height: 30rem;
+    min-height: 20rem;
     overscroll-behavior-x: contain;
     scroll-snap-type:x proximity;
 }

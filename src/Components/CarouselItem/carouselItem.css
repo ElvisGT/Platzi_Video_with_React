@@ -51,6 +51,9 @@
     right: 0;
     margin: 1.5rem ;
 }
+.carousel-item__details:hover .carousel-item_details-img{
+    z-index: 2;
+}
 
 .carousel-item_details-img img{
     width: 3rem;

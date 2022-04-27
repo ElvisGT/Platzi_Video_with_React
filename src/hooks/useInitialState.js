@@ -43,7 +43,6 @@ const useInitialState = (API_titles,API_photos) => {
       //    console.log(item)
       //  }
 
-        console.log(videos)
         
         return videos;
         

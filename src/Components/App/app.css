@@ -1,7 +1,8 @@
 body {
-    background-color:#9056f5;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     overflow-x: hidden;
+    background: linear-gradient(#30bb98, #9491EB);
+    min-height: 100vh;
 
 }
 

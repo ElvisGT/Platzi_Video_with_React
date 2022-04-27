@@ -1,0 +1,78 @@
+.register{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#21C08B, #AB88FF);
+    padding: 0rem 3.0rem;
+    
+}
+.register__container{
+    background-color: rgba(255, 255, 255, 0.1);
+    border: .2rem solid white;
+    border-radius: 4.0rem;
+    color: white;
+    padding: 6.0rem 6.8rem 4.0rem;
+    min-height: 100vh;
+    width: 30.0rem;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.register__container--form{
+    display: flex;
+    flex-direction: column;
+}
+.register-input{
+    background-color:transparent;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: .2rem solid white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.6rem;
+    margin-bottom: 2.0rem;
+    padding: 0 2.0rem;
+    outline: none;
+    height: 5.0rem;
+}
+
+::placeholder{
+    color: white;
+}
+
+.register-buttom{
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 2.5rem;
+    border:.1rem solid;
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 5.0rem;
+    letter-spacing: .1rem;
+    margin: 1.0rem 0;
+}
+.iniciar_sesion{
+    display: flex;
+    justify-content: center;
+    margin: 2.5rem 0;
+}
+.iniciar_sesion a{
+    color:white;
+    text-decoration: none;
+    font-size: 1.6rem;
+}
+.iniciar_sesion a:hover{
+    text-decoration: underline;
+}
+
+@media screen and (min-width:768px){
+    
+    .register__container{
+        background-color: transparent;
+        width: 80%;
+        padding: 0;
+        align-items: center;
+    }
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOMClient from 'react-dom/client';
 import './index.css';
-import {App} from './Components/App/index';
+import {App} from './routes/App';
 
 
 const container = document.getElementById('root');

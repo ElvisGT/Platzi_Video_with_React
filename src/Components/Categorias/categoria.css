@@ -1,5 +1,5 @@
 .categorias {
-    height: 30rem;
+    min-height: 10rem;
 }
 
 .categoria-tittle{

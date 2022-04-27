@@ -1,6 +1,4 @@
-import React,{useState,useEffect} from 'react';
-import {Header} from '../Header/index';
-import {Footer} from '../Footer/index';
+import React from 'react';
 import {Search} from '../Search/index';
 import {Categorias} from '../Categorias/index';
 import {Carousel} from '../Carousel/index';
@@ -12,17 +10,19 @@ import './app.css';
 const API_titles = 'https://jsonplaceholder.typicode.com/todos?_start=0&_limit=5';
 const API_photos = 'https://jsonplaceholder.typicode.com/photos?_start=0&_limit=5';
 
-const App = () => {
+const Home = () => {
     const initialState = useInitialState(API_titles,API_photos);
 
     
     return initialState.length === 0 ? <h1>Cargando...</h1> :(
         <div className="app">
-                <Header />
+                
                 <Search />
-                
-                
-                
+
+
+                <Categorias tittle="Favoritos">
+                   
+                </Categorias> 
                
                 <Categorias tittle="Mas vistos">
                     <Carousel>
@@ -32,8 +32,6 @@ const App = () => {
                                 <CarouselItem key={item.id} {...item} />
                             ))
 
-                        
-                      
                     }
                     </Carousel>
                 </Categorias> 
@@ -50,7 +48,6 @@ const App = () => {
                     </Carousel>
                 </Categorias>
                 
-                <Footer />
         </div>
     )
 
@@ -58,4 +55,4 @@ const App = () => {
 }
 
 
-export {App};
+export {Home};
