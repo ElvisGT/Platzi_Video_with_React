@@ -1,8 +1,13 @@
 import React from 'react';
 import './header.css';
 import {Link} from 'react-router-dom';
+import { connect } from 'react-redux';
+import gravatar from '../../utils/gravatar';
 
-function Header () {
+function Header (props) {
+    const {user} = props;
+    const hashUser = Object.keys(user).length > 0;
+
     return (
         <React.Fragment>
             <header className="header">
@@ -11,7 +16,12 @@ function Header () {
                 </Link>
                 <div className= "header__menu">
                     <div className="header__menu--profile">
-                        <img src="https://img.icons8.com/ios-glyphs/50/000000/user.png" alt="user" />
+                        {hashUser 
+                            ? 
+                                <img src={gravatar(user.email)} alt={user.email}/>
+                            :
+                                <img src="https://img.icons8.com/ios-glyphs/50/000000/user.png" alt="user" />
+                        }
                         <p>Perfil</p>
                         
                     </div>
@@ -25,4 +35,11 @@ function Header () {
     )
 }
 
-export {Header}
+const mapStateToProps = state => {
+    return {
+        user:state.user
+    }
+}
+
+export default connect(mapStateToProps,null)(Header);
+

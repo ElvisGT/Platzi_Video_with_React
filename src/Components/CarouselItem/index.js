@@ -57,4 +57,5 @@ const mapDispatchToProps = {
         DeleteFavorite
 }
 
+
 export default connect(null,mapDispatchToProps)(CarouselItem);

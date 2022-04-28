@@ -1,16 +1,49 @@
-import React from 'react';
+import React,{useState} from 'react';
+import {connect} from 'react-redux';
 import './login.css';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
+import {LoginRequest} from '../../actions/index';
 
-function Login () {
+
+const Login = props => {
+    const navigate = useNavigate();
+    const [form,setValues] = useState({
+        email:''
+    });
+
+    const handleInput = event => {
+        setValues({
+            ...form,
+            [event.target.name]:event.target.value
+        })
+    }
+
+    const handleSubmit = event => {
+        event.preventDefault();
+        props.LoginRequest(form);
+        navigate('/');
+    }
+
+
     return (
         <React.Fragment>
             <section className="login">
                 <section className="login__container">
                     <h2>Inicia sesi&oacute;n</h2>
-                    <form className="login__container--form">
-                        <input type="text" className="input" placeholder="correo" />
-                        <input type="password" className="input" placeholder="password" />
+                    <form className="login__container--form" onSubmit={handleSubmit}>
+                        <input  type="text" 
+                                className="input" 
+                                placeholder="correo"
+                                onChange={handleInput}
+                                name="email" 
+                                />
+                        <input  type="password" 
+                                className="input" 
+                                placeholder="password"
+                                name="password" 
+                                onChange={handleInput}
+                                />
+                        
                         <button className="buttom">Iniciar sesi&oacute;n</button>
                         <div className="login__container--remember-me">
                             <label >
@@ -37,5 +70,9 @@ function Login () {
 }
 
 
+const mapDispatchToProps = {
+    LoginRequest,
+}
 
-export default Login;
+
+export default connect(null,mapDispatchToProps)(Login);

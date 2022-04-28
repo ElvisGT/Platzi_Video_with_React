@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Search} from '../Search/index';
-import {Categorias} from '../Categorias/index';
+import Categorias from '../Categorias/index';
 import {Carousel} from '../Carousel/index';
 import CarouselItem from '../CarouselItem/index';
 
@@ -9,13 +9,19 @@ import './app.css';
 
 
 
-const Home = ({myList,trends}) => {
-    
+const Home = ({myList,trends,user}) => {
     return (
         <div className="app">
-                
+                 {Object.keys(user).length > 0  &&
+                    <h1 className="app-welcome">
+                        Bienvenido,
+                        {' '} 
+                        <span className="app-welcome-user" >
+                            {user.email}
+                        </span>
+                    </h1>
+                }
                 <Search />
-
 
                 {myList.length > 0 &&
                 <Categorias tittle="Favoritos">
@@ -65,7 +71,8 @@ const Home = ({myList,trends}) => {
 const mapStateToProps = (state) => {
     return {
         myList:state.myList,
-        trends:state.trends
+        trends:state.trends,
+        user:state.user,
     }
 }
 
