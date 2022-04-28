@@ -1,12 +1,12 @@
 import {useState,useEffect} from 'react';
 
+const API_titles = 'https://jsonplaceholder.typicode.com/todos?_start=0&_limit=5';
+const API_photos = 'https://jsonplaceholder.typicode.com/photos?_start=0&_limit=5';
 
-
-const useInitialState = (API_titles,API_photos) => {
-    const [videos,setVideos] = useState([]);
-
-    const FetchData = async () => {
-
+const useInitialState = () => {
+  const [videos,setVideos] = useState([]);
+  
+  const FetchData = async () => {
       try{
         const response_title = await fetch(API_titles);
         const response_photo = await fetch(API_photos);

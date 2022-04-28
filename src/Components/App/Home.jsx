@@ -1,34 +1,38 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import {Search} from '../Search/index';
 import {Categorias} from '../Categorias/index';
 import {Carousel} from '../Carousel/index';
-import {CarouselItem} from '../CarouselItem/index';
-import {useInitialState} from '../../hooks/useInitialState';
+import CarouselItem from '../CarouselItem/index';
 
 import './app.css';
 
-const API_titles = 'https://jsonplaceholder.typicode.com/todos?_start=0&_limit=5';
-const API_photos = 'https://jsonplaceholder.typicode.com/photos?_start=0&_limit=5';
 
-const Home = () => {
-    const initialState = useInitialState(API_titles,API_photos);
 
+const Home = ({myList,trends}) => {
     
-    return initialState.length === 0 ? <h1>Cargando...</h1> :(
+    return (
         <div className="app">
                 
                 <Search />
 
 
+                {myList.length > 0 &&
                 <Categorias tittle="Favoritos">
-                   
+                   <Carousel>
+                        {
+                           myList.map(item => (
+                            <CarouselItem key={item.id} {...item} />
+                           ))
+                        }
+                   </Carousel>
                 </Categorias> 
+                }
                
                 <Categorias tittle="Mas vistos">
                     <Carousel>
-                    {
-                        initialState.slice(0,4).map(item => (
-
+                    {trends !== undefined &&
+                        trends.map(item => (
                                 <CarouselItem key={item.id} {...item} />
                             ))
 
@@ -38,8 +42,8 @@ const Home = () => {
                 
                 <Categorias tittle="Variados">
                     <Carousel>
-                    {
-                        initialState.slice(0,4).map(item => (
+                    {trends !== undefined &&
+                        trends.map(item => (
 
                             <CarouselItem key={item.id} {...item} />
                         ))
@@ -54,5 +58,11 @@ const Home = () => {
     
 }
 
+const mapStateToProps = (state) => {
+    return {
+        myList:state.myList,
+        trends:state.trends
+    }
+}
 
-export {Home};
+export default connect(mapStateToProps,null)(Home);

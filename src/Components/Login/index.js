@@ -28,7 +28,7 @@ function Login () {
                         <div> <img src="https://img.icons8.com/ios-glyphs/30/000000/twitter.png" alt="Twitter" />Inicia sesi&oacute;n con Twitter</div>
                         
                     </section>
-
+                   
                     <p className="login__container--register">No tienes ninguna cuenta <Link to="/register">Regístrate</Link></p>
                 </section>
         </section>
@@ -36,4 +36,6 @@ function Login () {
     )
 }
 
-export {Login}
+
+
+export default Login;

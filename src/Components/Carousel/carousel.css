@@ -1,7 +1,6 @@
 .carousel {
     margin-top: 5rem;
     margin-left: 2rem;
-    min-height: calc(80vh - 7rem - 10rem);
     
 }
 .carousel__container{

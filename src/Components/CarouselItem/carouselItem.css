@@ -59,7 +59,7 @@
     width: 3rem;
     height: 3rem;
     scroll-snap-align: center;
-    z-index: -1;
+    z-index: 5;
 }
 
 
