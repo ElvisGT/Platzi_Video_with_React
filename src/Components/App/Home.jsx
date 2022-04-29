@@ -17,7 +17,7 @@ const Home = ({myList,trends,user}) => {
                         Bienvenido,
                         {' '} 
                         <span className="app-welcome-user" >
-                            {user.email}
+                            {user.name}
                         </span>
                     </h1>
                 }

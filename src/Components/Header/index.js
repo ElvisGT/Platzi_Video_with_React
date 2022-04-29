@@ -3,10 +3,15 @@ import './header.css';
 import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
 import gravatar from '../../utils/gravatar';
+import {LogOut} from '../../actions/index';
 
 function Header (props) {
     const {user} = props;
     const hashUser = Object.keys(user).length > 0;
+
+    const handleLogOut = () => {
+        props.LogOut({});
+    }
 
     return (
         <React.Fragment>
@@ -26,8 +31,20 @@ function Header (props) {
                         
                     </div>
                     <ul>
-                        <li><Link to="/login">Cuenta</Link></li>
-                        <li><Link to="/">Cerrar sesi&oacute;n</Link></li>
+                        
+                        {hashUser 
+                            ?
+                                <li><Link to="/login">{user.name}</Link></li>
+                            :
+                                null
+                        }
+
+                        {hashUser 
+                            ?
+                                <li><Link to="/" onClick={handleLogOut}>Cerrar sesi&oacute;n</Link></li>
+                            :
+                                <li><Link to="/login">Iniciar sesi&oacute;n</Link></li>
+                        }
                     </ul>
                 </div>
             </header>
@@ -41,5 +58,9 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps,null)(Header);
+const mapDispatchToProps = {
+    LogOut
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Header);
 
