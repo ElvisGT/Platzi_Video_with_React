@@ -1,11 +1,30 @@
-import React from 'react';
+import React,{useRef} from 'react';
 import './search.css';
+import {connect} from 'react-redux';
+import {SearchInput} from '../../actions/index';
 
-const Search = () => (
-    <section className="main">
-        <h2 className="main__title">Que quieres ver hoy?</h2>
-        <input className="search-input" type="text" placeholder="Buscar..."/>
-    </section>
-)
+const Search = (props) => {
+    const inputRef = useRef();
+    
+    const handleInput = () => {
+        props.SearchInput(inputRef.current.value)
+    }
 
-export {Search};
+    return (
+        <section className="main">
+            <h2 className="main__title">Que quieres ver hoy?</h2>
+            <input  className="search-input" 
+                    type="text" 
+                    placeholder="Buscar..."
+                    onChange={handleInput}
+                    ref={inputRef}
+            />
+        </section>
+    );
+};
+
+const mapDispatchToProps = {
+    SearchInput
+};
+
+export default connect(null,mapDispatchToProps)(Search);

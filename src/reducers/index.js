@@ -37,6 +37,15 @@ const reducer = (state,action) => {
                 playing:state.trends.find(items => items.id === Number(action.payload))
                 || []
             }
+        
+        case 'SEARCH_INPUT':
+            return {
+                ...state,
+                showTrends:state.trends.filter(item => {
+                    return item.title.toLowerCase().includes(action.payload.toLowerCase())
+                }) || state.trends
+            }
+        
 
         default:
             return state

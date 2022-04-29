@@ -17,7 +17,6 @@ const Login = props => {
             [event.target.name]:event.target.value
         })
 
-        console.log(event.target.name)
     }
 
 

@@ -17,7 +17,8 @@ const Layout = ({children}) => {
         "myList":[],
         "playing":{},
         "user":{},
-        'trends':listTrends
+        'trends':listTrends,
+        "showTrends":listTrends
 
     }
     

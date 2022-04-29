@@ -29,3 +29,8 @@ export const Playing = payload => ({
     type:'PLAYING',
     payload
 })
+
+export const SearchInput = payload => ({
+    type:"SEARCH_INPUT",
+    payload
+})

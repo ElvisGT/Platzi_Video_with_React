@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Search} from '../Search/index';
+import Search from '../Search/index';
 import Categorias from '../Categorias/index';
 import {Carousel} from '../Carousel/index';
 import CarouselItem from '../CarouselItem/index';
@@ -9,7 +9,9 @@ import './app.css';
 
 
 
-const Home = ({myList,trends,user}) => {
+const Home = (props) => {
+    const {myList,trends,user,showTrends} = props;
+
     return (
         <div className="app">
                  {Object.keys(user).length > 0  &&
@@ -41,8 +43,8 @@ const Home = ({myList,trends,user}) => {
                
                 <Categorias tittle="Mas vistos">
                     <Carousel>
-                    {trends !== undefined &&
-                        trends.map(item => (
+                    {showTrends !== undefined &&
+                        showTrends.map(item => (
                                 <CarouselItem key={item.id} {...item} />
                             ))
 
@@ -52,8 +54,8 @@ const Home = ({myList,trends,user}) => {
                 
                 <Categorias tittle="Variados">
                     <Carousel>
-                    {trends !== undefined &&
-                        trends.map(item => (
+                    {showTrends !== undefined &&
+                        showTrends.map(item => (
 
                             <CarouselItem key={item.id} {...item} />
                         ))
@@ -73,6 +75,7 @@ const mapStateToProps = (state) => {
         myList:state.myList,
         trends:state.trends,
         user:state.user,
+        showTrends:state.showTrends
     }
 }
 
