@@ -15,6 +15,7 @@ const Layout = ({children}) => {
 
     const initialState = {
         "myList":[],
+        "playing":{},
         "user":{},
         'trends':listTrends
 

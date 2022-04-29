@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {setFavorites,DeleteFavorite} from '../../actions/index';
 import './carouselItem.css';
+import {Link} from 'react-router-dom';
 
 
 function CarouselItem (props) {
@@ -19,13 +20,16 @@ function CarouselItem (props) {
            
      
     }
+   
     return (
         <React.Fragment>
             <div className="carousel-item">
                 <img className="carousel-item__img" src={url} alt="people" />
                 <div className="carousel-item__details">
                     <div className="carousel-item_details-img">
-                        <img src="https://img.icons8.com/flat-round/64/000000/play--v1.png" alt="Play" />
+                        <Link to={`/player/${id}`}>
+                            <img src="https://img.icons8.com/flat-round/64/000000/play--v1.png" alt="Play"  />
+                        </Link>
                         
                         {isList 
                             ?

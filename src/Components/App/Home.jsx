@@ -24,7 +24,7 @@ const Home = ({myList,trends,user}) => {
                 <Search />
 
                 {myList.length > 0 &&
-                <Categorias tittle="Favoritos">
+                <Categorias tittle="Favoritos" myList={myList.length}>
                    <Carousel>
                         {
                            myList.map(item => (

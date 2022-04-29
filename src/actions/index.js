@@ -24,3 +24,8 @@ export const UserRegister = payload => ({
     type:'REGISTER',
     payload
 })
+
+export const Playing = payload => ({
+    type:'PLAYING',
+    payload
+})

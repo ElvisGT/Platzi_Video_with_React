@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import './register.css';
-import {Link,Navigate, useNavigate} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {UserRegister} from '../../actions/index';
 
