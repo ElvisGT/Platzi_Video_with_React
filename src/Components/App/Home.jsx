@@ -16,11 +16,7 @@ const Home = (props) => {
         <div className="app">
                  {Object.keys(user).length > 0  &&
                     <h1 className="app-welcome">
-                        Bienvenido,
-                        {' '} 
-                        <span className="app-welcome-user" >
-                            {user.name}
-                        </span>
+                        Bienvenido
                     </h1>
                 }
                 <Search />

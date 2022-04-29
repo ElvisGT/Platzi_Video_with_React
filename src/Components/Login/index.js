@@ -8,7 +8,8 @@ import {LoginRequest} from '../../actions/index';
 const Login = props => {
     const navigate = useNavigate();
     const [form,setValues] = useState({
-        email:''
+        email:'',
+        
     });
 
     const handleInput = event => {
