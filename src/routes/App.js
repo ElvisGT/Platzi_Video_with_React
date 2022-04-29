@@ -2,7 +2,7 @@ import React from 'react';
 import {HashRouter,Route,Routes} from 'react-router-dom';
 import Home from '../Components/App/Home';
 import Login from '../Components/Login/index';
-import {Register} from '../Components/Register/index';
+import Register from '../Components/Register/index';
 import {NotFound} from '../Components/NotFound/index';
 import {Layout} from '../Components/Layout/index';
 

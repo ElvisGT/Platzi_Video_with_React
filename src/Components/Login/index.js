@@ -16,7 +16,11 @@ const Login = props => {
             ...form,
             [event.target.name]:event.target.value
         })
+
+        console.log(event.target.name)
     }
+
+
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -31,25 +35,20 @@ const Login = props => {
                 <section className="login__container">
                     <h2>Inicia sesi&oacute;n</h2>
                     <form className="login__container--form" onSubmit={handleSubmit}>
-                        <input  type="text" 
-                                className="input" 
-                                placeholder="nombre"
-                                onChange={handleInput}
-                                name="name" 
-                                />
-
-                        <input  type="text" 
+                        <input  type="email" 
                                 className="input" 
                                 placeholder="correo"
                                 onChange={handleInput}
-                                name="email" 
+                                name="email"
+                                required 
                                 />
                         
                         <input  type="password" 
                                 className="input" 
-                                placeholder="password"
+                                placeholder="contraseña"
                                 name="password" 
                                 onChange={handleInput}
+                                required 
                                 />
                         
                         <button className="buttom">Iniciar sesi&oacute;n</button>
